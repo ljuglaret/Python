@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<title align="center"> Partie 1 </title>
+
+<xmp theme="Cyborg" style="display:none;">
+# Variables et affectation
+
+## differents types
+
+### Nombres 
+```python
+a = 4 
+b = 4.5
+```
+
+### Chaines de caracteres
+s = "toto" 
+
+### Booleens
+t = True
+f = False
+
+## Operations
+
+### Operations arithmetiques 
+plus + 
+fois *
+moins -
+divison / ou //
+
+
+**Incrementation et decrementation**
+```python 
+c = 0 
+c = c + 1 
+d = 0
+d = d - 1
+
+e = 0
+e += 1 #remplace e par e + 1
+f = 0  
+f -= 1 #remplace f par f -1
+
+```
+Remarque : Les operateurs * et / sont aussi utilisables de cette maniere
+
+
+### Comparaisons
+Strictement inferieur, inferieur ou egal, strictement superieur, superieur ou egal   
+egal, different se notent respectivement : 
+
+```python
+<
+<=
+>
+>= 
+== 
+!=
+```
+
+### Operations booleenes
+Et    :  and   
+Ou    :  or   
+Non   :  not
+
+**Exercice 1**   
+On suppose que x et y ont pour valeurs respectives des entiers a et b.  
+On execute la suite d instructions suivante  :
+x  = x + y; y = x - y ; x = x - y    
+Quels sont les contenus des variables x et y en fin de sequence?   
+
+solution : 
+
+x = x + y    
+y = x - y   
+Donc x = x + y - y   
+Donc y = x   
+x = x - y   
+Donc x = x + y - x   
+Donc x = y    
+
+Cette suite d instructions permet d echanger les valeurs de deux variables.   
+Inconvenient : Ce n est pas intuitif et inutilement long 
+Solution : 
+
+```python
+tmp  =  x 
+x    =  y 
+y    =  tmp 
+``` 
+En introduisant une troisieme variable "tmp" on peut stocker une copie de la variable "x"  
+ainsi, on attribue a "x" la valeur contenue dans "y", et "y" peut recuperer   
+le contenu de "x" par l intermediaire "tmp"
+
+### La structure conditionnelle
+
+**Exemple : Indiquer si une annee est bissextile.**   
+
+Pour rappel c est le cas si et seulement si :   
+
+-   l annee est divisible par 4 et non divisible par 100
+-   ou l annee est divisible par 400
+
+```python
+if ((x % 400 == 0) or ((x %100 != 0) and (x%4 == 0))) : 
+    print ("bla")
+else : 
+    print("pas bla")
+```
+
+
+###Fonctions
+
+**Pourquoi**   
+Pour eviter d ecrire plusieurs fois de suite le meme code   
+
+**Exercices**   
+
+- 1 :  La fonction valeur absolue   
+- 2 :  Le maximum de trois nombres
+            
+
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>
