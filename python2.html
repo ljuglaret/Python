@@ -12,18 +12,34 @@
 
 **Exercices**
 
-- 1 :   Fonction Booleenne palyndrome   
-- 2 :   Base 2 vers Base 10 et reciproquement   
-- 3 :   Generaliser ce principe
+- 1 :   Fonction Booléenne palindrome   
+- 2 :   Base 2 vers Base 10 et réciproquement   
+- 3 :   Généraliser ce principe
 
-# Listes
+# Listes d entiers 
+**Exercices : Il faut utiliser une boucle pour parcourir tous les termes et   
+ effectuer les calculs**   
+- 1 : Élever tous les termes au carres 
+- 2 : Filtrer tous les entiers pairs
 
-# Recursion
+*Nb:En python, il existe des fonctions permettant directement ces opérations.*   
+```python
+l = [1,2,4,5,5,6]
+list(filter(lambda x : x%2 == 0 , l)) # retourne les éléments pairs de l.
+
+list(map(lambda x : x*2 , l)) # multiplie tous les éléments de la liste par deux.
+```
+
+**Exercice**   
+En utilisant un map , écrire une fonction qui prend en éntree un entier n et retourne les puissance de 2, de 2 puissance 0 à 2 puissance n.   
+
+
+# Récursion
 
 **Exercices**   
 - 1 : Factorielle
-- 1 : Suite de Fibonacci   
-- 2 : Suite de Syracuse    
+- 2 : Suite de Fibonacci   
+- 3 : Suite de Syracuse    
 
 
 # Module Random
@@ -32,18 +48,19 @@
 
 ```python
 from random import *
-# Avec a et b deux entiers naturels precedemment definis : 
+# Avec a et b deux entiers naturels précédemment définis : 
 entierAleatoire = randint(a , b )
 
 ```
 **Exercices**   
-*Nb : Repeter les deux experiences 100 fois*   
+*Nb : Répéter les deux expériences 100 fois*   
 
-- 1 : Lancer d un de . Afficher le nombre d occurences de chaque face
-- 2 : Lancer simultane de deux des   
-    calculer la probabilite d obtenir la meme face 
-- 3 : Lancer simultane de deux des   
-    calculer la probabilite que la somme des deux des soit egale a la troisieme
+- 1 : Lancer d un de . Afficher le nombre d occurrences de chaque face
+- 2 : Lancer simultané de deux dés   
+    calculer la probabilité d obtenir la même face 
+- 3 : Lancer simultané de deux dés   
+    calculer la probabilité que la somme des deux dés soit égale a la troisième
+
 
     
 <ul class="pager">
