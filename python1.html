@@ -7,7 +7,7 @@
 
 # Variables et affectation
 
-## differents types
+## différents types
 
 ### Nombres 
 ```python
@@ -15,23 +15,23 @@ a = 4
 b = 4.5
 ```
 
-### Chaines de caracteres
+### Chaînes de caractères
 s = "toto" 
 
-### Booleens
+### Booléens
 t = True
 f = False
 
 ## Operations
 
-### Operations arithmetiques 
+### Operations arithmétiques 
 plus + 
 fois *
 moins -
-divison / ou //
+division / ou //
 
 
-**Incrementation et decrementation**
+**Incrémentation et décrémentation**
 ```python 
 c = 0 
 c = c + 1 
@@ -44,12 +44,12 @@ f = 0
 f -= 1 #remplace f par f -1
 
 ```
-Remarque : Les operateurs * et / sont aussi utilisables de cette maniere
+Remarque : Les opérateurs * et / sont aussi utilisables de cette manière
 
 
 ### Comparaisons
-Strictement inferieur, inferieur ou egal, strictement superieur, superieur ou egal   
-egal, different se notent respectivement : 
+Strictement inférieur, inférieur ou égal, strictement supérieur, supérieur ou égal   
+égal, différent se notent respectivement : 
 
 ```python
 <
@@ -60,16 +60,16 @@ egal, different se notent respectivement :
 !=
 ```
 
-### Operations booleenes
+### Opérations booléennes
 Et    :  and   
 Ou    :  or   
 Non   :  not
 
 **Exercice 1**   
 On suppose que x et y ont pour valeurs respectives des entiers a et b.  
-On execute la suite d instructions suivante  :
+On exécute la suite d instructions suivante  :
 x  = x + y; y = x - y ; x = x - y    
-Quels sont les contenus des variables x et y en fin de sequence?   
+Quels sont les contenus des variables x et y en fin de séquence?   
 
 solution : 
 
@@ -81,8 +81,8 @@ x = x - y
 Donc x = x + y - x   
 Donc x = y    
 
-Cette suite d instructions permet d echanger les valeurs de deux variables.   
-Inconvenient : Ce n est pas intuitif et inutilement long 
+Cette suite d instructions permet d échanger les valeurs de deux variables.   
+Inconvénient : Ce n est pas intuitif et inutilement long 
 Solution : 
 
 ```python
@@ -90,18 +90,18 @@ tmp  =  x
 x    =  y 
 y    =  tmp 
 ``` 
-En introduisant une troisieme variable "tmp" on peut stocker une copie de la variable "x"  
+En introduisant une troisième variable "tmp" on peut stocker une copie de la variable "x"  
 ainsi, on attribue a "x" la valeur contenue dans "y", et "y" peut recuperer   
-le contenu de "x" par l intermediaire "tmp"
+le contenu de "x" par l intermédiaire "tmp"
 
 ### La structure conditionnelle
 
-**Exemple : Indiquer si une annee est bissextile.**   
+**Exemple : Indiquer si une année est bissextile.**   
 
 Pour rappel c est le cas si et seulement si :   
 
--   l annee est divisible par 4 et non divisible par 100
--   ou l annee est divisible par 400
+-   l année est divisible par 4 et non divisible par 100
+-   ou l année est divisible par 400
 
 ```python
 if ((x % 400 == 0) or ((x %100 != 0) and (x%4 == 0))) : 
@@ -114,7 +114,7 @@ else :
 ###Fonctions
 
 **Pourquoi**   
-Pour eviter d ecrire plusieurs fois de suite le meme code   
+Pour éviter d écrire plusieurs fois de suite le même code   
 
 **Exercices**   
 
