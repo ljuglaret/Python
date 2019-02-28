@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Partie 3  </title></head>
+<body><textarea theme="Cyborg">
+
+# Classes  
+
+*********************
+*** Classe complexe ***   
+
+compl.py
+
+*******************
+
+
+**Surcharge des opérateurs**
+
+Redéfinir les opérateurs + et - permet de les utiliser directement au lieu d appeler les fonctions correspondantes.   
+
+
+```python
+def __add__(self,other) : 
+        return Complexe(self.r + other.r, self.im + other.im)
+
+def __sub__(self,other) : 
+        return Complexe(self.r - other.r, self.im - other.im)
+```
+
+**Utilisation**
+
+```python
+c1 = Complexe(4,5)
+c2 = Complexe(2,-3)
+(c1 + c2).aff()
+```
+
+**Liste Complète :   
+
+> addition 	+ 	__add__(self,other) 	
+<!-- -->
+> soustraction 	- 	__sub__(self,other) 	  
+<!-- -->
+> multiplication 	* 	__mul__(self,other) 	
+<!-- -->
+> division 	/ 	__truediv__(self,other) 	
+<!-- -->
+> élévation à la puissance 	** 	__pow__(self,other) 	 
+
+
+<ul class="pager">
+<li class="previous"><a href="python2.html">← Partie2 </a></li>
+</ul>
+
+        
+</textarea>
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+        
+<script type="text/javascript" src="//lbesson.bitbucket.io/md/strapdown.min.js"></script>
+    </body>
+</html>
