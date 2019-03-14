@@ -4,51 +4,89 @@
         <title>Partie 2 </title></head>
     <body><textarea theme="Cyborg">
 
+# Reprise 
+
+Jeu du plus / moins . 
+Le but est de trouver une valeur générer aléatoirement comprise entre 0 et 100 
+Avec a chaque essai une indication. 
+Le jeu peut être amélioré en limitant le nombre d essais.
+
 # Boucles 
+
+Les boucles permettent de répéter plusieurs fois une même action.
+Par exemple, lors de la saisie d un mot de passe, on peut accorder trois tentatives de saisie
+avant de verrouiller le compte / la carte . 
+
+La boule while s utilise lorsque le nombre d itérations est inconnu. 
+En revanche, la boucle for s utilise lorsque le nombre d itérations est connu.
 
 ## while 
 
-**Exercice**   
+```python
+while(conditions):
+    actions 
+```
 
-Écrire une fonction qui prend en entrée un entier n et retourne la somme de ses chiffres.   
-Par exemple 123 → 1 + 2 + 3 = 6
+## for 
 
+```python
+for i in range (debut,fin,[pas]) :
+    action
+```
 
-## for
+** Exemples **
+```python
+def pair(a , b) :
+    for i in range(a,b+1,1) : 
+        if(i%2 == 0 ) : 
+            print(i)
+
+def imPair(a , b) :
+    for i in range(a,b+1,1) : 
+        if(i%2 != 0 ) : 
+            print(i)
+
+```
 
 **Exercices**
 
-- 1 :   Fonction Booléenne palindrome   
-- 2 :   Base 2 vers Base 10 et réciproquement   
-- 3 :   Généraliser ce principe
+- 0 : Reecrire chaque fonctions de l exemple précédent en utilisant une boucle while
+- 1 : Fonction Booléenne prenant en entrée une chaîne de caractères 
+et renvoyant vrai si c est un palindrome, faux sinon. 
+- 2 : Fonction permettant la conversion d un entier en Base 2 vers Base 10 
+et réciproquement.
+- 3 : Généraliser ce principe
 
-# Listes d entiers 
-**Exercices : Il faut utiliser une boucle pour parcourir tous les termes et   
- effectuer les calculs**   
-- 1 : Élever tous les termes au carres   
-- 2 : Filtrer tous les entiers pairs
+# Bibliotheque 
 
-*Nb:En python, il existe des fonctions permettant directement ces opérations.*   
-```python
-l = [1,2,4,5,5,6]
-list(filter(lambda x : x%2 == 0 , l)) # retourne les éléments pairs de l.
+# Listes 
 
-list(map(lambda x : x*2 , l)) # multiplie tous les éléments de la liste par deux.
-```
-**Exercices**   
-1 - En utilisant un map , écrire une fonction qui prend en entrée un entier n et retourne les puissance de 2, de 2 puissance 0 à 2 puissance n.  
-2 - Écrire de deux manière différentes une fonction qui prend en entrée une liste et la retourne sans ses doublons 
+```python 
+n = 4 
+tab = n*[] #tab est une liste de 4 éléments
+u0 = 2
+tab.append(u0) #u0 est ajoutée a la liste
+len(t) #renvoie la taille (le nombre d éléments ) de la liste
+``` 
 
-        
+**Exercices** 
+
+- 1 : Dans une liste d entiers, enlever les doublons. 
+- 2 : On considère t un tableau de températures stockées sous la forme d entier. 
+Le but de l exercice est de recuperer la valeur la plus proche de 0. 
+Si deux nombres sont également proche de 0, 
+alors le nombre positif est considéré comme étant le plus proche.
+Tests: 
+x = [-5 , -4 , -2 , 12 , -40 , 4 , 2 , 18 , 11 , 5] -> 2 
+x2 = [-12 , -5 , -137] ->5 
+
 # Récursion
 
-**Exercices**   
-- 1 : Reprendre la fonction retournant la somme des chiffres  d un entier.
-        Si le résultat précédent est plus petit que 9 le retourner
-        Sinon recommencer le calcul sur le résultat. Par exemple 657 -> 18 -> 9   
-- 2 : Suite de Fibonacci   
-- 3 : Suite de Syracuse    
+**Exercices** 
 
+- 1 : Factorielle 
+- 2 : Suite de Fibonacci 
+- 3 : Suite de Syracuse 
 
 # Module Random
 
@@ -60,14 +98,15 @@ from random import *
 entierAleatoire = randint(a , b )
 
 ```
-**Exercices**   
-*Nb : Répéter les deux expériences 100 fois*   
+**Exercices** 
+*Nb : Répéter les deux expériences 100 fois* 
 
 - 1 : Lancer d un de . Afficher le nombre d occurrences de chaque face
-- 2 : Lancer simultané de deux dés   
-    calculer la probabilité d obtenir la même face 
-- 3 : Lancer simultané de deux dés   
-    calculer la probabilité que la somme des deux dés soit égale a la troisième
+- 2 : Lancer simultané de deux des 
+calculer la probabilité d obtenir la même face 
+- 3 : Lancer simultané de deux des 
+calculer la probabilité que la somme des deux des soit égale a la troisième
+
 
 
     
