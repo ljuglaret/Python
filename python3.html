@@ -23,7 +23,72 @@ entierAleatoire = randint(a , b )
 - 3 : Lancer simultané de deux dés.   
     calculer la probabilité que la somme des deux dés soit égale a la troisième.
 
-#Module CSV
+#Module CSV   
+
+**Pourquoi**   
+
+Pour travailler sur des tableau de donnees avec des fonctions fournies par python.
+
+**Comment**   
+
+```python
+import csv 
+from statistics import mean #permet d utiliser la fonction moyenne
+```
+
+Lit chaque lignes d un fichier CSV.
+
+```python
+def lire():
+    with open('names.csv', newline='') as csvfile:
+      reader = csv.DictReader(csvfile)
+      for row in reader:
+        print(row['first_name'], row['last_name'],row['Notes'])
+```
+
+Extrait les donnees du tableau initial contenu dans un fichier   
+
+```python
+def retenir( fic):
+      l  = []
+      with open(fic, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+          rf  = row['first_name']
+          rl  = row['last_name']
+          rn = row['Notes']
+          l.append ([rf,rl,rn])
+      return l
+```
+**Exemple**   
+Obtenir la moyenne du tableau initial.
+Les notes etant stockees sous la forme de chaine de caracteres   
+il faut les "convertir" en nombres.   
+Pour cela on leur applique la fonctio : "is.numeric()" qui teste si   
+une chaine de caractere est un nombre.   
+Si c est le cas on peut convertir.   
+
+```python   
+def notes(fic) : 
+  l = retenir("names.csv")
+  n = []
+  n2 =[]
+
+  for e in l:
+    n.append(e[2])
+  
+  for k in n : 
+    if k.isnumeric() :
+      n2.append(float(k))
+  return mean(n2);
+  
+lire()
+print(retenir("names.csv"))
+print(notes("names.csv"))
+```
+Le code est disponible <a href = "https://repl.it/@ljuglaret/RecapCSV"> ici </a>   
+    
+    
 
 #Tests Unitaires
 
