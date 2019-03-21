@@ -2,18 +2,62 @@
 <html>
     <head>
         <title>Partie 2 </title></head>
-    <body><textarea theme="Cyborg">
+    <body><textarea theme="Journal">
+###Fonctions
 
-# Reprise   
--   : Jeu du plus / moins . 
-Le but est de trouver une valeur générer aléatoirement comprise entre 0 et 100 
-Avec a chaque essai une indication. 
-Le jeu peut être amélioré en limitant le nombre d essais.
-        
+**Pourquoi**   
+Pour eviter d ecrire plusieurs fois de suite le meme code   
+
+
+**Comment**
+
+Une fonction s ecrit toujours sous la forme :   
+ 
 ```python
-from random import *
-entierAleatoire = randint(0,100 )
+def nomDeLaFonction (parametres) : 
+    Actions
+
 ```
+
+Exemple   
+Fichier 1   
+
+```python   
+        x  = int(input())
+        y = int(input())
+        if (x < y) :
+            print(x) 
+        else :
+            print(y)  
+
+```
+
+Fichier2(equivalent)
+```python
+
+    def mini(a , b ) : 
+        if (a < b) :
+            return a
+        else :
+            return b
+
+    x  = int(input())
+    y = int(input())
+
+    print(mini(x,y))
+     
+```
+
+
+
+**Exercices**   
+
+- 1 :  La fonction valeur absolue   
+- 2 :  Le maximum de trois nombres
+- 3 :  Écrire une fonction qui prend en entrée un entier (représentant une température)
+    ,demander à l utilisateur si il souhaite convertir des degrés ou Celsius en degré Fahrenheit ou des degrés Fahrenheit en degré Celsius
+    ,puis afficher le résultat de la conversion
+            
 
 # Boucles 
 
@@ -54,22 +98,47 @@ def imPair(a , b) :
 
 **Exercices**
 
-- 0 : Reecrire chaque fonctions de l exemple précédent en utilisant une boucle while
 - 1  : Ecrire une fonction prenant en entrée deux entiers et renvoyant les nombre premiers compris dans cet intervalle. 
-- 2 : Fonction Booléenne prenant en entrée une chaîne de caractères 
-et renvoyant vrai si c est un palindrome, faux sinon. 
-- 3 : Fonction permettant la conversion d un entier en Base 2 vers Base 10 
+- 2 : Fonction permettant la conversion d un entier en Base 2 vers Base 10 
 et réciproquement.
-- 4 : Généraliser ce principe
+- 3 : Généraliser ce principe.
+
 
 # Listes 
 
 ```python 
 n = 4 
 tab = n*[] #tab est une liste de 4 éléments
+
+l = [5,1,8,2,5,3] 
 u0 = 2
-tab.append(u0) #u0 est ajoutée a la liste
-len(t) #renvoie la taille (le nombre d éléments ) de la liste
+l.append(u0) #u0 est ajoutée a la liste l 
+t = len(l) # taille de la liste
+x = l.count(5) # compte le nombre d occurences de 5 
+
+l2 = [8,9,5,4,5,6,1,2] 
+s = sum(l2) # Calcule la somme de la liste
+m = min(l2)  # Calcule le minimum de s
+M = max(l2)  # Calcule le maximum de s
+
+# Afficher tous les elements de l2 . Methode 1
+for elements in l2 :
+  print ( elements )
+
+# Afficher tous les elements de l2 . Methode 2
+for indice in range (1 , len(l2) - 1 ,1)  :
+  print ( elements )
+
+
+print (l)
+print(t)
+print(x)
+print(s) 
+print(m)
+print(M)
+
+
+
 ``` 
 
 **Exercices** 
@@ -79,54 +148,11 @@ len(t) #renvoie la taille (le nombre d éléments ) de la liste
 Le but de l exercice est de recuperer la valeur la plus proche de 0. 
 Si deux nombres sont également proche de 0, 
 alors le nombre positif est considéré comme étant le plus proche.
-Tests: 
-x = [-5 , -4 , -2 , 12 , -40 , 4 , 2 , 18 , 11 , 5] -> 2 
+Tests:   
+x = [-5 , -4 , -2 , 12 , -40 , 4 , 2 , 18 , 11 , 5] -> 2   
 x2 = [-12 , -5 , -137] ->5 
 
-        
-# Module typing   
-        
- <a button type="button" class="btn btn-info" href="https://repl.it/@ljuglaret/moduleTyping" >Lien</button></a>   
- <div></div>
- <a button type="button" class="btn btn-info" href="https://docs.python.org/3/library/typing.html" >Pour plus d informations : </button></a>      
-              
-           
-        
-# Récursion
-
-**Exercices** 
-
-- 1 : Ecrire une fonction qui prend en entrée un entier n et renvoie factorielle(n)
-- 2 : Ecrire une fonction qui prend en entrée un entier n ainsi que les deux premiers termes de la suite de Fibonacci,  
-    et renvoie  u_n .  
-- 3 : Ecrire une fonction qui prend en entrée un entier n er et renvoie le nieme terme de la suite de Syracuse.   
-    Calculer le temps de vol et le temps de vol en altitude
-    
-Pour rappel   
-- le temps de vol : c'est le plus petit indice n tel que un = 1.
-- le temps de vol en altitude : c'est le plus petit indice n tel que un+1 ≤ u0.
-
-# Module Random
-
-## Utilisation 
-
-```python
-from random import *
-# Avec a et b deux entiers naturels précédemment définis : 
-entierAleatoire = randint(a , b )
-
-```
-**Exercices** 
-*Nb : Répéter les deux expériences 100 fois* 
-
-- 1 : Lancer d un dé . Afficher le nombre d occurrences de chaque face
-- 2 : Lancer simultané de deux dés.   
-    calculer la probabilité d obtenir la même face. 
-- 3 : Lancer simultané de deux dés.   
-    calculer la probabilité que la somme des deux dés soit égale a la troisième.
-
-
-
+            
     
 <ul class="pager">
 <li class="previous"><a href="python1.html">← Partie1 </a></li>
