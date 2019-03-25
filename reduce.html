@@ -40,7 +40,7 @@ print(addReduce(l))
 ```python
 
 def allNative(cond,lis) : 
-    return all(list(map(lambda x :  x == True , lis))) # on peut remplacer x == True par cond(x)  
+    return all(list(map(lambda x : cond(x) , lis)))   
 
 def anyNative(cond,lis) :
     return any(list(map(lambda x :  cond(x) , lis)))
