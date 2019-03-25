@@ -80,8 +80,6 @@ def anyRapide(cond,lis) :
         else :
             i = i + 1 
             x = lis[i]
-        # print(" " + str(certainsVrais))
-
     return certainsVrais
 
 def allRapide(cond,lis) : 
@@ -95,7 +93,6 @@ def allRapide(cond,lis) :
         else :
             i = i + 1 
             x = lis[i]
-        #print(" " + str(tousVrais))
 
     return tousVrais
 
@@ -109,7 +106,7 @@ print("anyRapide : " + str(anyRapide((lambda x : x > 3),l2)))
 ```
 
 Pour revenir au produit on peut aussi faire une remarque tres similaire :   
-lorque il y a un terme negatif on peut directement renvoyer zero.   
+lorque il y a un terme nul on peut directement renvoyer zero.   
 Utilisons le allRapide sur le produit pour faire cette operation.   
 
 ```python
@@ -126,7 +123,6 @@ def produitListeRapide(cond,lis) :
             tousVrais = False 
             i = len(lis) 
         else :
-            #print(" " + str(x))
             acc = acc*x
             i = i + 1 
             x = lis[i]
