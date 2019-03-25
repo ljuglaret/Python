@@ -57,12 +57,12 @@ on doit s arreter.
 ```python
 l4 = [4,4,2,4]
 def allReduce(cond,lis) :
-    return (ft.reduce(lambda x, y : cond( x and y ) ,lis,True))
+    return (ft.reduce(lambda x, y : cond( x) and cond(y ) ,lis,True))
 print("all reduce : " + str(allReduce(lambda x : x > 3,l4)))
 
 
 def anyReduce(cond,lis) :
-    return (ft.reduce(lambda x, y : cond( x or y ) ,lis,True))
+    return (ft.reduce(lambda x, y : cond( x) or cond(y ) ,lis,True))
 print("any reduce : " + str(anyReduce(lambda x : x > 3,l4)))
 ```
 Ca ne regle pas le probleme.   
