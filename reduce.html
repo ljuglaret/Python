@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fold/Reduce</title></head>
+<body><textarea theme="Journal">
+
+## Les imports   
+```python
+import functools as ft 
+import operator  as op
+import random as r
+```
+    
+## Exemple 1 : somme des elements d une liste   
+```python
+def listRandom(n) : 
+    for i in range(n) :
+        l = n*[]
+        r1 = r.randint(10,999)
+        l.append(r1)
+    return l
+    
+l = listRandom(10000)
+
+def addNative (lis) : 
+    return sum(lis)
+
+print (addNative(l))
+
+def addReduce (lis) : 
+    return ft.reduce(op.add,lis,0)
+
+print(addReduce(l))
+
+```
+
+
+## Exemple2 : all et any 
+
+```python
+
+def allNative(cond,lis) : 
+    return all(list(map(lambda x :  x == True , lis))) # on peut remplacer x == True par cond(x)  
+
+def anyNative(cond,lis) :
+    return any(list(map(lambda x :  cond(x) , lis)))
+```
+
+Inconvenient :
+Dans le cas du any, puisque l on passe par un map   
+on evalue forcement tous les termes   
+au lieu de s arreter des qu un terme verifie la condition.   
+Pareillement dans le cas du all, des qu un terme ne verifie pas la condition   
+on doit s arreter.
+
+## Faire autrement avec un fold 
+```python
+l4 = [4,4,2,4]
+def allReduce(cond,lis) :
+    return (ft.reduce(lambda x, y : cond( x and y ) ,lis,True))
+print("all reduce : " + str(allReduce(lambda x : x > 3,l4)))
+
+
+def anyReduce(cond,lis) :
+    return (ft.reduce(lambda x, y : cond( x or y ) ,lis,True))
+print("any reduce : " + str(anyReduce(lambda x : x > 3,l4)))
+```
+Ca ne regle pas le probleme.   
+Derniere solution, implementation plus longue en terme de lignes mais plus efficace.   
+
+```python
+def anyRapide(cond,lis) : 
+    i = 0
+    x = lis[i]
+    certainsVrais = False 
+    while (i < len(lis)) :
+        if (cond(x)) : 
+            certainsVrais = True
+            i = len(lis) 
+        else :
+            i = i + 1 
+            x = lis[i]
+        # print(" " + str(certainsVrais))
+
+    return certainsVrais
+
+def allRapide(cond,lis) : 
+    i = 0
+    x = lis[i]
+    tousVrais = True 
+    while (i < len(lis)) :
+        if (not cond(x)) : 
+            tousVrais = False 
+            i = len(lis) 
+        else :
+            i = i + 1 
+            x = lis[i]
+        #print(" " + str(tousVrais))
+
+    return tousVrais
+
+
+l2 = [1,0,4,5,2,1,8,2]
+print("allNative: " + str(allNative((lambda x : x > 3),l2)))
+print ("anyNative: " + str(anyNative((lambda x : x > 3),l2)))
+
+print("allRapide : " + str (allRapide((lambda x : x > 3),l2)))
+print("anyRapide : " + str(anyRapide((lambda x : x > 3),l2)))
+```
+
+Pour revenir au produit on peut aussi faire une remarque tres similaire :   
+lorque il y a un terme negatif on peut directement renvoyer zero.   
+Utilisons le allRapide sur le produit pour faire cette operation.   
+
+```python
+
+l3 = [4,8,2,1,0,5,7]
+
+def produitListeRapide(cond,lis) : 
+    i = 0
+    x = lis[i]
+    tousVrais = True
+    acc = 1
+    while (i < len(lis)) :
+        if (not cond(x)) : 
+            tousVrais = False 
+            i = len(lis) 
+        else :
+            #print(" " + str(x))
+            acc = acc*x
+            i = i + 1 
+            x = lis[i]
+
+    return acc
+
+
+print("prod rapide : " + str(produitListeRapide((lambda x : x !=0),l3)))
+```
+
+</textarea>
+        <script type="text/javascript" src="//lbesson.bitbucket.io/md/strapdown.min.js"></script>
+    </body>
+</html>
